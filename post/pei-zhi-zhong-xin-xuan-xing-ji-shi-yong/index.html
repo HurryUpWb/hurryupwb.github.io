@@ -1,22 +1,102 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://github.com/HurryUpWb/hurryupwb.github.io</id>
-    <title>WB</title>
-    <updated>2020-03-24T13:47:52.440Z</updated>
-    <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://github.com/HurryUpWb/hurryupwb.github.io"/>
-    <link rel="self" href="https://github.com/HurryUpWb/hurryupwb.github.io/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
-    <logo>https://github.com/HurryUpWb/hurryupwb.github.io/images/avatar.png</logo>
-    <icon>https://github.com/HurryUpWb/hurryupwb.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, WB</rights>
-    <entry>
-        <title type="html"><![CDATA[配置中心选型及使用]]></title>
-        <id>https://github.com/HurryUpWb/hurryupwb.github.io/post/pei-zhi-zhong-xin-xuan-xing-ji-shi-yong/</id>
-        <link href="https://github.com/HurryUpWb/hurryupwb.github.io/post/pei-zhi-zhong-xin-xuan-xing-ji-shi-yong/">
-        </link>
-        <updated>2020-03-24T13:39:59.000Z</updated>
-        <content type="html"><![CDATA[<h4 id="配置中心">配置中心</h4>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>配置中心选型及使用 | WB</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://github.com/HurryUpWb/hurryupwb.github.io/favicon.ico?v=1585057671372">
+<link rel="stylesheet" href="https://github.com/HurryUpWb/hurryupwb.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="配置中心
+为什么要有配置中心
+​		随着程序功能的日益复杂，程序的配置日益增多：各种功能的开关、参数的配置、服务器的地址等，对程序配置的期望值也越来越高：配置修改后实时生效，灰度发布，分环境、分集群管理配置，完善的权限、审核机制，在这样的大..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://github.com/HurryUpWb/hurryupwb.github.io">
+        <img src="https://github.com/HurryUpWb/hurryupwb.github.io/images/avatar.png?v=1585057671372" class="site-logo">
+        <h1 class="site-title">WB</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      温故而知新
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://github.com/HurryUpWb/hurryupwb.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">配置中心选型及使用</h2>
+            <div class="post-date">2020-03-24</div>
+            
+            <div class="post-content" v-pre>
+              <h4 id="配置中心">配置中心</h4>
 <h5 id="为什么要有配置中心">为什么要有配置中心</h5>
 <p>​		随着程序功能的日益复杂，程序的配置日益增多：各种功能的开关、参数的配置、服务器的地址等，对程序配置的期望值也越来越高：配置修改后实时生效，灰度发布，分环境、分集群管理配置，完善的权限、审核机制，在这样的大环境下，传统的通过配置文件、数据库等方式已经越来越无法满足开发人员对配置管理的需求，所以在分布式的架构中配置中心也被当作一个独立的模块从业务项目中抽离出来。</p>
 <h5 id="流行配置中心选型对比">流行配置中心选型对比</h5>
@@ -415,258 +495,46 @@ String content = configFile.getContent();
 <li><a href="https://github.com/ctripcorp/apollo/wiki/FAQ">常见问题回答</a></li>
 <li><a href="https://github.com/ctripcorp/apollo/wiki/%E9%83%A8%E7%BD%B2&amp;%E5%BC%80%E5%8F%91%E9%81%87%E5%88%B0%E7%9A%84%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98">部署&amp;开发遇到的常见问题</a></li>
 </ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[eureka注册调用的两种方式]]></title>
-        <id>https://github.com/HurryUpWb/hurryupwb.github.io/post/eureka-zhu-ce-diao-yong-de-liang-chong-fang-shi/</id>
-        <link href="https://github.com/HurryUpWb/hurryupwb.github.io/post/eureka-zhu-ce-diao-yong-de-liang-chong-fang-shi/">
-        </link>
-        <updated>2020-03-24T13:39:05.000Z</updated>
-        <content type="html"><![CDATA[<ul>
-<li>
-<p>情景：servie_1通过eureka调用service_2</p>
-</li>
-<li>
-<p>方式：使用两种方式，一种是Fegin方式，另一种是用RestTemplate方式</p>
-<ul>
-<li>Fegin方式
-<ul>
-<li>RestTemplate方式</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>问题：这两种方式都不能调用到service_2</p>
-</li>
-<li>
-<p>解决方法：通过检查各种配置以及eureka调用的方式，发现微服务注册到eureka中有两种方式</p>
-<ul>
-<li>1，使用主机的hostname注册到eureka里，后续调用就通过hostname
-<ul>
-<li>2，使用主机IP注册到eureka，后续调用就是使用IP</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>eureka.instance.preferIpAddress =true</p>
-</blockquote>
-<p>使用第一种注册方式时，始终无法访问获取到服务，报错HTTP 400，通过几个小时的尝试和发掘，当使用第二种方式时可以<br>
-直接调用到服务，至于第一种方式，使用hostname的方式是eureka默认的服务调用方式，为什么不能调用呢，这里面有个坑，<br>
-部署微服务的主机名被设置成了带 ‘_’ 下划线，这是不符合规范的，所以调用时就会报错，修改hosname就可以了</p>
-</li>
-<li>
-<p>总结</p>
-<ul>
-<li>eureka调用和发现服务有两种方式，hostname和IP 方式
-<ul>
-<li>hostname 不能带 “_”
-<ul>
-<li>使用hostname相互调用微服务时，必须修改hosts文件，否则会有 unknowHost报错</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[springboot resttemplate使用]]></title>
-        <id>https://github.com/HurryUpWb/hurryupwb.github.io/post/springboot-resttemplate-shi-yong/</id>
-        <link href="https://github.com/HurryUpWb/hurryupwb.github.io/post/springboot-resttemplate-shi-yong/">
-        </link>
-        <updated>2020-03-24T13:38:37.000Z</updated>
-        <content type="html"><![CDATA[<ul>
-<li>
-<p>情景：<br>
-使用restTemplate进行微服务之间的调用</p>
-</li>
-<li>
-<p>方式</p>
-<ul>
-<li>
-<p>启动类或者配置中添加RestTemplate注入</p>
-</li>
-<li>
-<blockquote>
-<p>@Bean<br>
-private RestTemplate seRestTemplate(){<br>
-return new RestTemplate();<br>
-}</p>
-</blockquote>
-<ul>
-<li>
-<p>在哪里使用就@Autowired</p>
-</li>
-<li>
-<p>调用服务的代码</p>
-</li>
-<li>
-<blockquote>
-<p>restTemplate.postForObject(requestUrl+loginUrl,json,HashMap.class);</p>
-</blockquote>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>问题</p>
-<ul>
-<li>
-<p>报错信息</p>
-</li>
-<li>
-<blockquote>
-<p>I/O error on POST request for &quot;http://h3-orgmanager/userlogin/v1.0/private/login&quot;: h3-orgmanager; nested exception is       java.net.UnknownHostException: h3-orgmanager</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li>
-<p>解决方法</p>
-<ul>
-<li>给注入RestTemplate的地方添加一个注解 @LoadBalanced</li>
-</ul>
-</li>
-<li>
-<p>总结</p>
-<ul>
-<li>此时问题能够解决，但由此引申出的问题有很多<br>
-1，为什么要添加 @LoadBalanced 才能使用<br>
-2，微服务之间相互调用两种方式，一种使用 hostname 一种是使用IP，不加@LoadBalanced这种方式在使用IP的情况是否可行</li>
-</ul>
-</li>
-</ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[for循环里操作集合对象]]></title>
-        <id>https://github.com/HurryUpWb/hurryupwb.github.io/post/for-xun-huan-li-cao-zuo-ji-he-dui-xiang/</id>
-        <link href="https://github.com/HurryUpWb/hurryupwb.github.io/post/for-xun-huan-li-cao-zuo-ji-he-dui-xiang/">
-        </link>
-        <updated>2020-03-24T13:37:51.000Z</updated>
-        <content type="html"><![CDATA[<p>最近遇到关于集合遍历的问题，遍历的时候删除集合中的元素抛出异常 ConcurrentModificationException，所以回顾下这些基础知识：</p>
-<ul>
-<li>疑问
-<ul>
-<li>map 和 List 的remove 方法都是如何删除元素的？</li>
-<li>各有几种遍历方式，有何异同？</li>
-</ul>
-</li>
-<li>map 和 List 的remove 方法都是如何删除元素的？</li>
-</ul>
-<ol>
-<li>Map的remove()方法：<br>
-Map的删除元素的操作JDK只提供了一个方式，map.remove(Object key)，参数必须是map的Key</li>
-</ol>
-<pre><code class="language-java">public V remove(Object key) {
-    Entry&lt;K,V&gt; e = removeEntryForKey(key);
-    return (e == null ? null : e.value);
-}
-</code></pre>
-<ol start="2">
-<li>List 的remove()方法：<br>
-List的remove()方法则是有两种，是重载的方式实现的
-<ul>
-<li>remove(int index)：按照下标删除元素，此方法只会做数组越界检查</li>
-<li>remove（Object obj）：按照对象删除元素，这里会做运行时修改检查</li>
-</ul>
-</li>
-</ol>
-<p>各有几种遍历方式，有何异同？</p>
-<ol>
-<li>Map的遍历方式有常见的4种</li>
-</ol>
-<pre><code class="language-java">for(Object obj:map1.values()){}
 
-for(String s:map1.keySet()){}
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://github.com/HurryUpWb/hurryupwb.github.io/post/eureka-zhu-ce-diao-yong-de-liang-chong-fang-shi/">
+                  <h3 class="post-title">
+                    eureka注册调用的两种方式
+                  </h3>
+                </a>
+              </div>
+            
 
-for(Entry&lt;String, Object&gt; e:map1.entrySet()){}
+            
 
-Iterator&lt;Entry&lt;String, Object&gt;&gt; it = map1.entrySet().iterator();
-while(it.hasNext()){}
- 
-</code></pre>
-<p>这四种方式都是实现了迭代器的。</p>
-<p>List的遍历方式</p>
-<pre><code>for(int i=0;i&lt;blist.size();i++){}
-	
-for(String s:blist){}
-	
-Iterator&lt;String&gt; ilt = blist.iterator();
+          </div>
 
-while(ilt.hasNext()){}
-</code></pre>
-<p>​	<br>
-​	remove(int index)时会调用越界检查方法：<br>
-​	private void rangeCheck(int index) {<br>
-​	    if (index &gt;= size)<br>
-​		throw new                      IndexOutOfBoundsException(outOfBoundsMsg(index));<br>
-​	}<br>
-​</p>
-<pre><code>  remove（Object ojb）方法会调用是否修改检查：
-		  final void checkForComodification() {
-			if (modCount != expectedModCount)
-            throw new ConcurrentModificationException();
-			}
-</code></pre>
-<p>查看源码我们发现，其实remove方法本身是没有这个checkForComdification检查的，</p>
-<pre><code class="language-java">public boolean remove(Object o) {
-    if (o == null) {
-        for (int index = 0; index &lt; size; index++)
-            if (elementData[index] == null) {
-                fastRemove(index);
-                return true;
-            }
-    } else {
-        for (int index = 0; index &lt; size; index++)
-            if (o.equals(elementData[index])) {
-                fastRemove(index);
-                return true;
-            }
-    }
-    return false;
-}
-</code></pre>
-<p>这个方法是ArrayList的内部实现类的方法，因此只有使用迭代器遍历List 的时候删除或新增元素时就会抛出此异常，然后我们还发现，迭代器里面也有remove方法</p>
-<pre><code class="language-java"> public void remove() {
-            if (lastRet &lt; 0)
-                throw new IllegalStateException();
-            checkForComodification();
+        </div>
+      </div>
+    </div>
 
-            try {
-                ArrayList.this.remove(lastRet);
-                cursor = lastRet;
-                lastRet = -1;
-                expectedModCount = modCount;
-            } catch (IndexOutOfBoundsException ex) {
-                throw new ConcurrentModificationException();
-            }
-       }
-</code></pre>
-<p>此方法直接调用remove（index）方法，故不会抛出运行是修改异常。</p>
-<p>结论：<br>
-Map无论如何都不可以遍历时删除元素<br>
-List可以在遍历的时候使用下标删除元素或者使用迭代器的remove删除元素。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[ nginx转发header带下划线（'_'）的自动过滤问题nginx]]></title>
-        <id>https://github.com/HurryUpWb/hurryupwb.github.io/post/nginx-zhuan-fa-header-dai-xia-hua-xian-_de-zi-dong-guo-lu-wen-ti-nginx/</id>
-        <link href="https://github.com/HurryUpWb/hurryupwb.github.io/post/nginx-zhuan-fa-header-dai-xia-hua-xian-_de-zi-dong-guo-lu-wen-ti-nginx/">
-        </link>
-        <updated>2020-03-24T13:25:54.000Z</updated>
-        <content type="html"><![CDATA[<ul>
-<li>情景：在header设置参数，后端接收用于逻辑判断</li>
-<li>方式：前端静态资源部署在tomcat下，后端通过nginx转发进入网关，网关内获取header</li>
-<li>问题：某个一header无论如何都获取不到，起初怀疑长度超过header最大长度80K，后发现并不是</li>
-<li>解决方法：对比发现这个header使用了一个下划线 ，更换之后即可，最后发现是nginx配置导致下划线header无法被转发</li>
-<li>总结：可以配置nginx中http部分 增加underscores_in_headers on; 的配置，即可转发</li>
-</ul>
-]]></content>
-    </entry>
-</feed>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>

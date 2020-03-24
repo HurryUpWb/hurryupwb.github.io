@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>for循环里操作集合对象 | WB</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://github.com/HurryUpWb/hurryupwb.github.io/favicon.ico?v=1585057671372">
+<link rel="stylesheet" href="https://github.com/HurryUpWb/hurryupwb.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="最近遇到关于集合遍历的问题，遍历的时候删除集合中的元素抛出异常 ConcurrentModificationException，所以回顾下这些基础知识：
+
+疑问
+
+map 和 List 的remove 方法都是如何删除元素的？
+各有几种遍历..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://github.com/HurryUpWb/hurryupwb.github.io">
+        <img src="https://github.com/HurryUpWb/hurryupwb.github.io/images/avatar.png?v=1585057671372" class="site-logo">
+        <h1 class="site-title">WB</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      温故而知新
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://github.com/HurryUpWb/hurryupwb.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">for循环里操作集合对象</h2>
+            <div class="post-date">2020-03-24</div>
+            
+            <div class="post-content" v-pre>
+              <p>最近遇到关于集合遍历的问题，遍历的时候删除集合中的元素抛出异常 ConcurrentModificationException，所以回顾下这些基础知识：</p>
+<ul>
+<li>疑问
+<ul>
+<li>map 和 List 的remove 方法都是如何删除元素的？</li>
+<li>各有几种遍历方式，有何异同？</li>
+</ul>
+</li>
+<li>map 和 List 的remove 方法都是如何删除元素的？</li>
+</ul>
+<ol>
+<li>Map的remove()方法：<br>
+Map的删除元素的操作JDK只提供了一个方式，map.remove(Object key)，参数必须是map的Key</li>
+</ol>
+<pre><code class="language-java">public V remove(Object key) {
+    Entry&lt;K,V&gt; e = removeEntryForKey(key);
+    return (e == null ? null : e.value);
+}
+</code></pre>
+<ol start="2">
+<li>List 的remove()方法：<br>
+List的remove()方法则是有两种，是重载的方式实现的
+<ul>
+<li>remove(int index)：按照下标删除元素，此方法只会做数组越界检查</li>
+<li>remove（Object obj）：按照对象删除元素，这里会做运行时修改检查</li>
+</ul>
+</li>
+</ol>
+<p>各有几种遍历方式，有何异同？</p>
+<ol>
+<li>Map的遍历方式有常见的4种</li>
+</ol>
+<pre><code class="language-java">for(Object obj:map1.values()){}
+
+for(String s:map1.keySet()){}
+
+for(Entry&lt;String, Object&gt; e:map1.entrySet()){}
+
+Iterator&lt;Entry&lt;String, Object&gt;&gt; it = map1.entrySet().iterator();
+while(it.hasNext()){}
+ 
+</code></pre>
+<p>这四种方式都是实现了迭代器的。</p>
+<p>List的遍历方式</p>
+<pre><code>for(int i=0;i&lt;blist.size();i++){}
+	
+for(String s:blist){}
+	
+Iterator&lt;String&gt; ilt = blist.iterator();
+
+while(ilt.hasNext()){}
+</code></pre>
+<p>​	<br>
+​	remove(int index)时会调用越界检查方法：<br>
+​	private void rangeCheck(int index) {<br>
+​	    if (index &gt;= size)<br>
+​		throw new                      IndexOutOfBoundsException(outOfBoundsMsg(index));<br>
+​	}<br>
+​</p>
+<pre><code>  remove（Object ojb）方法会调用是否修改检查：
+		  final void checkForComodification() {
+			if (modCount != expectedModCount)
+            throw new ConcurrentModificationException();
+			}
+</code></pre>
+<p>查看源码我们发现，其实remove方法本身是没有这个checkForComdification检查的，</p>
+<pre><code class="language-java">public boolean remove(Object o) {
+    if (o == null) {
+        for (int index = 0; index &lt; size; index++)
+            if (elementData[index] == null) {
+                fastRemove(index);
+                return true;
+            }
+    } else {
+        for (int index = 0; index &lt; size; index++)
+            if (o.equals(elementData[index])) {
+                fastRemove(index);
+                return true;
+            }
+    }
+    return false;
+}
+</code></pre>
+<p>这个方法是ArrayList的内部实现类的方法，因此只有使用迭代器遍历List 的时候删除或新增元素时就会抛出此异常，然后我们还发现，迭代器里面也有remove方法</p>
+<pre><code class="language-java"> public void remove() {
+            if (lastRet &lt; 0)
+                throw new IllegalStateException();
+            checkForComodification();
+
+            try {
+                ArrayList.this.remove(lastRet);
+                cursor = lastRet;
+                lastRet = -1;
+                expectedModCount = modCount;
+            } catch (IndexOutOfBoundsException ex) {
+                throw new ConcurrentModificationException();
+            }
+       }
+</code></pre>
+<p>此方法直接调用remove（index）方法，故不会抛出运行是修改异常。</p>
+<p>结论：<br>
+Map无论如何都不可以遍历时删除元素<br>
+List可以在遍历的时候使用下标删除元素或者使用迭代器的remove删除元素。</p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://github.com/HurryUpWb/hurryupwb.github.io/post/nginx-zhuan-fa-header-dai-xia-hua-xian-_de-zi-dong-guo-lu-wen-ti-nginx/">
+                  <h3 class="post-title">
+                     nginx转发header带下划线（&#39;_&#39;）的自动过滤问题nginx
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>

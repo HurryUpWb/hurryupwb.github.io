@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>标签列表 | WB</title>
+<title>springboot resttemplate使用 | WB</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,7 +18,23 @@
 
 
 
-    <meta name="description" content="温故而知新">
+    <meta name="description" content="
+
+情景：
+使用restTemplate进行微服务之间的调用
+
+
+方式
+
+
+启动类或者配置中添加RestTemplate注入
+
+
+
+@Bean
+private RestTemplate seRestTemplate(){
+return ne..." />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div id="app" class="main">
@@ -88,10 +104,91 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <h2 class="tag-list-title">标签列表</h2>
-          <div class="tags-container">
+          <div class="post-detail">
+            <h2 class="post-title">springboot resttemplate使用</h2>
+            <div class="post-date">2020-03-24</div>
             
+            <div class="post-content" v-pre>
+              <ul>
+<li>
+<p>情景：<br>
+使用restTemplate进行微服务之间的调用</p>
+</li>
+<li>
+<p>方式</p>
+<ul>
+<li>
+<p>启动类或者配置中添加RestTemplate注入</p>
+</li>
+<li>
+<blockquote>
+<p>@Bean<br>
+private RestTemplate seRestTemplate(){<br>
+return new RestTemplate();<br>
+}</p>
+</blockquote>
+<ul>
+<li>
+<p>在哪里使用就@Autowired</p>
+</li>
+<li>
+<p>调用服务的代码</p>
+</li>
+<li>
+<blockquote>
+<p>restTemplate.postForObject(requestUrl+loginUrl,json,HashMap.class);</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>问题</p>
+<ul>
+<li>
+<p>报错信息</p>
+</li>
+<li>
+<blockquote>
+<p>I/O error on POST request for &quot;http://h3-orgmanager/userlogin/v1.0/private/login&quot;: h3-orgmanager; nested exception is       java.net.UnknownHostException: h3-orgmanager</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>解决方法</p>
+<ul>
+<li>给注入RestTemplate的地方添加一个注解 @LoadBalanced</li>
+</ul>
+</li>
+<li>
+<p>总结</p>
+<ul>
+<li>此时问题能够解决，但由此引申出的问题有很多<br>
+1，为什么要添加 @LoadBalanced 才能使用<br>
+2，微服务之间相互调用两种方式，一种使用 hostname 一种是使用IP，不加@LoadBalanced这种方式在使用IP的情况是否可行</li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://github.com/HurryUpWb/hurryupwb.github.io/post/for-xun-huan-li-cao-zuo-ji-he-dui-xiang/">
+                  <h3 class="post-title">
+                    for循环里操作集合对象
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
           </div>
+
         </div>
       </div>
     </div>
