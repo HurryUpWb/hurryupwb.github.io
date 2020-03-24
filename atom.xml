@@ -2,14 +2,27 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://github.com/HurryUpWb/hurryupwb.github.io</id>
     <title>WB</title>
-    <updated>2020-03-24T14:06:28.949Z</updated>
+    <updated>2020-03-24T14:19:29.808Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://github.com/HurryUpWb/hurryupwb.github.io"/>
     <link rel="self" href="https://github.com/HurryUpWb/hurryupwb.github.io/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
     <logo>https://github.com/HurryUpWb/hurryupwb.github.io/images/avatar.png</logo>
     <icon>https://github.com/HurryUpWb/hurryupwb.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, WB</rights>
+    <entry>
+        <title type="html"><![CDATA[about]]></title>
+        <id>https://github.com/HurryUpWb/hurryupwb.github.io/post/about/</id>
+        <link href="https://github.com/HurryUpWb/hurryupwb.github.io/post/about/">
+        </link>
+        <updated>2020-03-24T14:18:53.000Z</updated>
+        <content type="html"><![CDATA[<ul>
+<li>人</li>
+<li>搬砖</li>
+<li>JAVA</li>
+<li>地球</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[配置中心选型及使用]]></title>
         <id>https://github.com/HurryUpWb/hurryupwb.github.io/post/pei-zhi-zhong-xin-xuan-xing-ji-shi-yong/</id>
