@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>文章归档 | Gridea</title>
+<title> nginx转发header带下划线（&#39;_&#39;）的自动过滤问题nginx | Gridea</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,7 +18,11 @@
 
 
 
-    <meta name="description" content="温故而知新">
+    <meta name="description" content="
+情景：在header设置参数，后端接收用于逻辑判断
+方式：前端静态资源部署在tomcat下，后端通过nginx转发进入网关，网关内获取header
+问题：某个一header无论如何都获取不到，起初怀疑长度超过header最大长度80K，后..." />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div id="app" class="main">
@@ -88,30 +92,26 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          
+          <div class="post-detail">
+            <h2 class="post-title"> nginx转发header带下划线（&#39;_&#39;）的自动过滤问题nginx</h2>
+            <div class="post-date">2020-03-24</div>
+            
+            <div class="post-content" v-pre>
+              <ul>
+<li>情景：在header设置参数，后端接收用于逻辑判断</li>
+<li>方式：前端静态资源部署在tomcat下，后端通过nginx转发进入网关，网关内获取header</li>
+<li>问题：某个一header无论如何都获取不到，起初怀疑长度超过header最大长度80K，后发现并不是</li>
+<li>解决方法：对比发现这个header使用了一个下划线 ，更换之后即可，最后发现是nginx配置导致下划线header无法被转发</li>
+<li>总结：可以配置nginx中http部分 增加underscores_in_headers on; 的配置，即可转发</li>
+</ul>
 
-          <h2 class="archives-title">文章归档</h2>
-          <div class="archives-container">
+            </div>
             
-              <h2 class="year" data-aos="fade-in" data-aos-delay="500">2020</h2>
-              
-                
-                  <article class="post">
-                    <a href="https://github.com/HurryUpWb/hurryupwb.github.io/post/nginx-zhuan-fa-header-dai-xia-hua-xian-_de-zi-dong-guo-lu-wen-ti-nginx/">
-                      <h2 class="post-title">
-                         nginx转发header带下划线（&#39;_&#39;）的自动过滤问题nginx
-                      </h2>
-                    </a>
-                  </article>
-                
-              
             
+
+            
+
           </div>
-
-          <div class="pagination-container">
-  
-  
-</div>
 
         </div>
       </div>

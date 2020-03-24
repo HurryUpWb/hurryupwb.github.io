@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://github.com/HurryUpWb/hurryupwb.github.io</id>
     <title>Gridea</title>
-    <updated>2020-03-10T13:15:44.495Z</updated>
+    <updated>2020-03-24T13:27:41.208Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://github.com/HurryUpWb/hurryupwb.github.io"/>
     <link rel="self" href="https://github.com/HurryUpWb/hurryupwb.github.io/atom.xml"/>
@@ -10,4 +10,19 @@
     <logo>https://github.com/HurryUpWb/hurryupwb.github.io/images/avatar.png</logo>
     <icon>https://github.com/HurryUpWb/hurryupwb.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[ nginx转发header带下划线（'_'）的自动过滤问题nginx]]></title>
+        <id>https://github.com/HurryUpWb/hurryupwb.github.io/post/nginx-zhuan-fa-header-dai-xia-hua-xian-_de-zi-dong-guo-lu-wen-ti-nginx/</id>
+        <link href="https://github.com/HurryUpWb/hurryupwb.github.io/post/nginx-zhuan-fa-header-dai-xia-hua-xian-_de-zi-dong-guo-lu-wen-ti-nginx/">
+        </link>
+        <updated>2020-03-24T13:25:54.000Z</updated>
+        <content type="html"><![CDATA[<ul>
+<li>情景：在header设置参数，后端接收用于逻辑判断</li>
+<li>方式：前端静态资源部署在tomcat下，后端通过nginx转发进入网关，网关内获取header</li>
+<li>问题：某个一header无论如何都获取不到，起初怀疑长度超过header最大长度80K，后发现并不是</li>
+<li>解决方法：对比发现这个header使用了一个下划线 ，更换之后即可，最后发现是nginx配置导致下划线header无法被转发</li>
+<li>总结：可以配置nginx中http部分 增加underscores_in_headers on; 的配置，即可转发</li>
+</ul>
+]]></content>
+    </entry>
 </feed>
