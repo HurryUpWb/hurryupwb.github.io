@@ -1,7 +1,9 @@
 ---
 title: openresty的选型和应用
 date: 2024-12-13 17:31:29
-tags: openresty
+tags: 
+  - openresty
+  - nginx
 categories: 工作
 ---
 
