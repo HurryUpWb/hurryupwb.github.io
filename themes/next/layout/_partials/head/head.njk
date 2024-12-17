@@ -9,6 +9,15 @@
 {%- if config.meta_generator %}
   {{- meta_generator() }}
 {%- endif %}
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DBSC339QK0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DBSC339QK0');
+</script>
 
 {%- if config.preconnect %}
   <link rel="preload" href="{{ url_for(theme.css) }}/main.css" as="style">
