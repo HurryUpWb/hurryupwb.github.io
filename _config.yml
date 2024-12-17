@@ -14,7 +14,8 @@ timezone: ''
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://hurryupwb.github.io/
-permalink: :year/:month/:day/:title/
+#permalink: :year/:month/:day/:title/
+permalink: posts/:abbrlink/
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -54,6 +55,7 @@ prismjs:
   preprocess: true
   line_number: true
   tab_replace: ''
+use_date_for_updated: false
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -102,3 +104,11 @@ theme: next
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+  
+# seo
+sitemap:
+  path: sitemap.xml
+  
+abbrlink:
+  alg: crc16
+  rep: dec

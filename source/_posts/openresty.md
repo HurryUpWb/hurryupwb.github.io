@@ -1,10 +1,11 @@
 ---
 title: openresty的选型和应用
-date: 2024-12-13 17:31:29
-tags: 
+tags:
   - openresty
   - nginx
 categories: 工作
+abbrlink: 28213
+date: 2024-12-13 17:31:29
 ---
 
 
@@ -20,5 +21,11 @@ categories: 工作
 因此针对上述原因，需要找到一个能满足如下要求的中间件
 
 1. 能够提供高性能的`Http`服务
+
 2. 能够支持稍微复杂点的逻辑判断代码
+
 3. 通用性好
+
+   
+
+## 测试
