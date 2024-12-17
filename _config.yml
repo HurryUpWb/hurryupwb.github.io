@@ -108,6 +108,9 @@ deploy:
 # seo
 sitemap:
   path: sitemap.xml
+
+baidusitemap:
+  path: baidusitemap.xml
   
 abbrlink:
   alg: crc16
