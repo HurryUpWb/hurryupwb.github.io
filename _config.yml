@@ -116,3 +116,7 @@ baidusitemap:
 abbrlink:
   alg: crc16
   rep: dec
+
+google_analytics:
+  enable: true
+  tracking_id: G-DBSC339QK0
