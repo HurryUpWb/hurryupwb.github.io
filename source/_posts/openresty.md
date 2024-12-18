@@ -56,7 +56,7 @@ location =/ {
 
 经过测试发现上述代码经常达不到预期的效果，经过排查发现Nginx的IF条件语句和一般编程习惯的逻辑条件判断是不一样的，相关文档则有最著名的Nginx的官方文档[If is Evil](https://web.archive.org/web/20231227223503/https://www.nginx.com/resources/wiki/start/topics/depth/ifisevil/)，同时上述的多IF判断也让代码可读性变得很差和难以维护，针对IF的问题做了如下的测试：
 
-![nginx-if指令测试](https://cdn.jsdelivr.net/gh/HurryUpWb/pics/image-20241218113152946.png)
+![nginx-if指令测试](https://cdn.jsdelivr.net/gh/HurryUpWb/pics@main/image-20241218113152946.png)
 
 显然可以发现，此处的IF使用逻辑是违背我们的日常编程习惯的，故针对这一问题搜索发现了OpenResty
 
