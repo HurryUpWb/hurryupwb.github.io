@@ -148,7 +148,7 @@ avatar:
   # If true, the avatar will be displayed in circle.
   rounded: true
   # If true, the avatar will be rotated with the cursor.
-  rotated: false
+  rotated: true
 
 # Posts / Categories / Tags in sidebar.
 site_state: true
@@ -363,18 +363,25 @@ body_scrollbar:
   # Reserving space for the scrollbar gutter even if the content is not overflowing.
   stable: false
 
+highlight:
+    enable: true  
+prismjs:
+  enable: false
+  
 codeblock:
   # Code Highlight theme
   # All available themes: https://theme-next.js.org/highlight/
   theme:
-    light: default
-    dark: stackoverflow-dark
+    #light: default
+    #dark: stackoverflow-dark
+    light: atom-one-dark-reasonable
+    dark: atom-one-dark-reasonable 
   prism:
     light: prism
     dark: prism-dark
   # Add copy button on codeblock
   copy_button:
-    enable: false
+    enable: true
     # Available values: default | flat | mac
     style:
   # Fold code block
@@ -428,10 +435,10 @@ github_banner:
 # ---------------------------------------------------------------
 
 font:
-  enable: false
+  enable: true
 
   # Uri of fonts host, e.g. https://fonts.googleapis.com (Default).
-  host:
+  #host: https://fonts.proxy.ustclug.org/
 
   # Font options:
   # `external: true` will load this font family from `host` above.
@@ -441,8 +448,9 @@ font:
   # Global font settings used for all elements inside <body>.
   global:
     external: true
-    family: Lato
-    size:
+    #family: Lato
+    family: Noto Serif SC
+    size: 1
 
   # Font settings for site title (.site-title).
   title:
@@ -464,7 +472,7 @@ font:
   # Font settings for <code> and code blocks.
   codes:
     external: true
-    family:
+    family: Roboto Mono
 
 
 # ---------------------------------------------------------------
