@@ -105,11 +105,17 @@ menu:
   #schedule: /schedule/ || fa fa-calendar
   #sitemap: /sitemap.xml || fa fa-sitemap
   #commonweal: /404/ || fa fa-heartbeat
+  每日早报: /daily-news/ || fa fa-archive
 
 # Enable / Disable menu icons / item badges.
 menu_settings:
   icons: true
   badges: false
+  
+  
+timeline:
+  enable: true
+  title: Timeline
 
 
 # ---------------------------------------------------------------

@@ -31,6 +31,7 @@ code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
  - "baidu_verify_codeva-W0Cd4mvkrF.html"
+ 
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -105,6 +106,7 @@ theme: next
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+ 
   
 # seo
 sitemap:
