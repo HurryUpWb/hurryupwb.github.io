@@ -5,24 +5,19 @@ type: about
 ---
 
 <h1 align = "center"><i>about me</i> </h1>
-
-<html>
-    <table style="width: 100%; background-color:transparent !important;">
-        <tr>
-            <td style="width: 30%; border-style: none; background-color:transparent !important;">
-                <img src="https://cdn.jsdelivr.net/gh/HurryUpWb/pics@main/微信图片_20241220161631.jpg" style="zoom:20%;" align="center"/>
-            </td>
-            <td style="border-style: none; background-color:transparent !important;">
-					<h3 align="center">暂时没有什么可以介绍的~</h3>
-            </td>
-        </tr>
-    </table>
-</html>
-
+<table style="width: 100%; background-color:hsl(0deg 0% 100%);">
+    <tr>
+        <td style="width: 30%; border-style: none; background-color:hsl(0deg 0% 100%);">
+            <img src="https://cdn.jsdelivr.net/gh/HurryUpWb/pics@main/iconcc.webp" style="zoom:20%;" align="center"/>
+        </td>
+        <td style="border-style: none; background-color:hsl(0deg 0% 100%);">
+                <h3 align="center">暂时没有什么可以介绍的~</h3>
+        </td>
+    </tr>
+</table>
 
 
 <h1 align = "center"><i>about site</i> </h1>
-
 {% timeline 2024年,purple %}
 
 <!-- timeline 12-20 -->
