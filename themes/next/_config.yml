@@ -96,15 +96,15 @@ open_graph:
 # Value before `||` delimiter is the target link, value after `||` delimiter is the name of Font Awesome icon.
 # External url should start with http:// or https://
 menu:
-  home: / || fa fa-home
-  #about: /about/ || fa fa-user
+  home: / || fa fa-home  
   tags: /tags/ || fa fa-tags
   categories: /categories/ || fa fa-th
-  photos: /photos/ || fas fa-camera-retro
+  相册: /photos/ || fas fa-camera-retro
   #archives: /archives/ || fa fa-archive
   #schedule: /schedule/ || fa fa-calendar
   #sitemap: /sitemap.xml || fa fa-sitemap
   #commonweal: /404/ || fa fa-heartbeat
+  about: /about/ || fa fa-user
   每日早报: /daily-news/ || fa fa-archive
 
 # Enable / Disable menu icons / item badges.
