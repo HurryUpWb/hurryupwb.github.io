@@ -106,9 +106,22 @@ theme: next
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
- 
+  
+symbols_count_time:
+  symbols: true
+  time: true
+  total_symbols: true
+  total_time: true
+  exclude_codeblock: false
+  wpm: 200
+  suffix: "mins."
   
 # seo
+seo:
+  enable: true
+  descriptionLength: 160
+  keywordsLength: 10
+
 sitemap:
   path: sitemap.xml
 
