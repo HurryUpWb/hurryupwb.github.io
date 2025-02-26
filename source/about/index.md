@@ -7,9 +7,6 @@ type: about
 <h1 align = "center"><i>about me</i> </h1>
 <table style="width: 100%; background-color:hsl(0deg 0% 100%);">
     <tr>
-        <td style="width: 30%; border-style: none; background-color:hsl(0deg 0% 100%);">
-            <img src="https://cdn.jsdelivr.net/gh/HurryUpWb/pics@main/iconcc.webp" style="zoom:20%;" align="center"/>
-        </td>
         <td style="border-style: none; background-color:hsl(0deg 0% 100%);">
                 <h3 align="center">暂时没有什么可以介绍的~</h3>
         </td>
